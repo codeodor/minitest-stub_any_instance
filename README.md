@@ -6,7 +6,9 @@ Adds a method to MiniTest that stubs any instance of a class.
 Installation
 ------------
 Run `gem install minitest-stub_any_instance` from the command prompt
+
 or 
+
 Put `gem "minitest-stub_any_instance"` in your `Gemfile` and run `bundle install` from the command prompt
 
 Usage
