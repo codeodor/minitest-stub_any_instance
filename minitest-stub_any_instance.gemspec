@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/codeodor/minitest-stub_any_instance"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = ["lib/minitest/stub_any_instance.rb"]
   spec.executables   = []
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.test_files    = ["test/stub_any_instance_test.rb"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
