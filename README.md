@@ -21,5 +21,5 @@ end
 
 Credits
 ---------
-Vasiliy Ermolovich (@nashby) gets credit for [writing the code as part of a pull request](https://github.com/seattlerb/minitest/pull/245) to minitest. I extracted it into a gem.
+Vasiliy Ermolovich ([@nashby](https://github.com/nashby/)) gets credit for [writing the code as part of a pull request](https://github.com/seattlerb/minitest/pull/245) to minitest. I extracted it into a gem.
 
