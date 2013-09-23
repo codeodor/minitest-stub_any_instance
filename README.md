@@ -1,7 +1,6 @@
 minitest-stub_any_instance
 ==========================
-
-Adds a method to MiniTest that stubs any instance of a class.
+Adds a method to MiniTest that creates a method stub on any instance of a class for the duration of a block.
 
 Usage
 ------
