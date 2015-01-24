@@ -7,7 +7,7 @@ class Object
 
       define_method(name) do |*args|
         if val_or_callable.respond_to? :call then
-          val_or_callable.call(*args)
+          instance_exec(*args, &val_or_callable)
         else
           val_or_callable
         end

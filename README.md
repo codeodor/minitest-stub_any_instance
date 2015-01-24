@@ -1,7 +1,14 @@
 minitest-stub_any_instance
 ==========================
+Adds a method to MiniTest that creates a method stub on any instance of a class for the duration of a block.
 
-Adds a method to MiniTest that stubs any instance of a class.
+Usage
+------
+```ruby
+String.stub_any_instance(:length, 42) do
+  assert_equal "hello".length, 42
+end
+```
 
 Installation
 ------------
@@ -11,13 +18,6 @@ or
 
 Put `gem "minitest-stub_any_instance"` in your `Gemfile` and run `bundle install` from the command prompt
 
-Usage
-------
-```ruby
-String.stub_any_instance(:length, 42) do
-  assert_equal "hello".length, 42
-end
-```
 
 Credits
 ---------

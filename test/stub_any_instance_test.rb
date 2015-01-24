@@ -33,4 +33,12 @@ class TestStubAnyInstance < MiniTest::Unit::TestCase
     assert_empty $stderr.string
     assert got_here
   end
+
+  def test_proc_has_access_to_self
+    twice_size = -> { self.size * 2 }
+    String.stub_any_instance(:length, twice_size) do
+      assert_equal 6, 'abc'.length
+    end
+  end
+
 end
