@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "minitest-stub_any_instance"
-  spec.version       = "1.0.0"
+  spec.version       = Minitest::StubAnyInstance::VERSION
   spec.authors       = ["Sammy Larbi", "Vasiliy Ermolovich"]
   spec.email         = ["sam@codeodor.com"]
   spec.description   = %q{Adds a method to MiniTest that stubs any instance of a class.}
