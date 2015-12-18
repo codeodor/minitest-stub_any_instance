@@ -2,6 +2,23 @@ require 'minitest/autorun'
 require 'stringio'
 require File.expand_path("../../lib/minitest/stub_any_instance", __FILE__)
 
+module StubAnyInstanceTest
+  class GrandparentClass
+    def foo(_a)
+      'bar'
+    end
+  end
+
+  class ParentClass < GrandparentClass
+    def foo
+      super(:a)
+    end
+  end
+
+  class ChildClass < ParentClass
+  end
+end
+
 class TestStubAnyInstance < MiniTest::Unit::TestCase
   def setup
     $stderr = StringIO.new
@@ -41,4 +58,13 @@ class TestStubAnyInstance < MiniTest::Unit::TestCase
     end
   end
 
+  def test_stub_method_not_implemented_in_grandchild_class
+    ::StubAnyInstanceTest::ChildClass.stub_any_instance(:foo, :result) do
+      assert_equal :result, ::StubAnyInstanceTest::ChildClass.new.foo
+    end
+  end
+
+  def test_stubbed_method_does_not_get_restored_to_non_owning_class
+    assert_equal 'bar', ::StubAnyInstanceTest::ChildClass.new.foo
+  end
 end
