@@ -2,6 +2,8 @@ minitest-stub_any_instance
 ==========================
 Adds a method to MiniTest that creates a method stub on any instance of a class for the duration of a block.
 
+[![Build Status](https://travis-ci.org/codeodor/minitest-stub_any_instance.svg?branch=master)](https://travis-ci.org/codeodor/minitest-stub_any_instance)
+
 Usage
 ------
 ```ruby
@@ -14,7 +16,7 @@ Installation
 ------------
 Run `gem install minitest-stub_any_instance` from the command prompt
 
-or 
+or
 
 Put `gem "minitest-stub_any_instance"` in your `Gemfile` and run `bundle install` from the command prompt
 
