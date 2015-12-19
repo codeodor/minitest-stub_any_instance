@@ -13,7 +13,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.3)
+  bundler (~> 1.11)
   minitest
   minitest-stub_any_instance!
   rake
+
+BUNDLED WITH
+   1.11.2
