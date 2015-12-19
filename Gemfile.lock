@@ -17,6 +17,3 @@ DEPENDENCIES
   minitest
   minitest-stub_any_instance!
   rake
-
-BUNDLED WITH
-   1.10.6
