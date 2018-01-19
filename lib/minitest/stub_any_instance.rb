@@ -1,4 +1,4 @@
-class Object
+class BasicObject
   def self.stub_any_instance name, val_or_callable, &block
     new_name = "__minitest_any_instance_stub__#{name}"
 

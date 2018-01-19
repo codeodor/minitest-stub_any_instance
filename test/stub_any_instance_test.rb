@@ -3,7 +3,7 @@ require 'stringio'
 require File.expand_path("../../lib/minitest/stub_any_instance", __FILE__)
 
 module StubAnyInstanceTest
-  class GrandparentClass
+  class GrandparentClass < BasicObject
     def foo(_a)
       'bar'
     end
