@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minitest-stub_any_instance (1.0.0)
+    minitest-stub_any_instance (1.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -13,10 +13,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.11.2)
+  bundler (>= 1.11.2)
   minitest
   minitest-stub_any_instance!
   rake
 
 BUNDLED WITH
-   1.11.2
+   1.16.1
