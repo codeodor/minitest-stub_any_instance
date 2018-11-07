@@ -33,6 +33,15 @@ class TestStubAnyInstance < MiniTest::Unit::TestCase
     assert got_here
   end
 
+  def test_stubs_a_method_without_passing_any_value
+    got_here = false
+    String.stub_any_instance(:length) do
+      assert_nil "hello".length
+      got_here = true
+    end
+    assert got_here
+  end
+
   def test_restores_the_original_method_after_the_block
     string = "hello world"
     got_here = false
