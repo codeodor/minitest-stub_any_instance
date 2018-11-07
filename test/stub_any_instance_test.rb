@@ -19,7 +19,7 @@ module StubAnyInstanceTest
   end
 end
 
-class TestStubAnyInstance < MiniTest::Unit::TestCase
+class TestStubAnyInstance < Minitest::Test
   def setup
     $stderr = StringIO.new
   end
