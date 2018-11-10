@@ -19,7 +19,14 @@ module StubAnyInstanceTest
   end
 end
 
-class TestStubAnyInstance < Minitest::Test
+if Gem.loaded_specs["minitest"].version < Gem::Version.create('5.0')
+  MinitestTestClass = MiniTest::Unit::TestCase
+else
+  MinitestTestClass = Minitest::Test
+end
+
+
+class TestStubAnyInstance < MinitestTestClass
   def setup
     $stderr = StringIO.new
   end
