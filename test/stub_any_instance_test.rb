@@ -19,7 +19,14 @@ module StubAnyInstanceTest
   end
 end
 
-class TestStubAnyInstance < MiniTest::Unit::TestCase
+if Gem.loaded_specs["minitest"].version < Gem::Version.create('5.0')
+  MinitestTestClass = MiniTest::Unit::TestCase
+else
+  MinitestTestClass = Minitest::Test
+end
+
+
+class TestStubAnyInstance < MinitestTestClass
   def setup
     $stderr = StringIO.new
   end
@@ -28,6 +35,15 @@ class TestStubAnyInstance < MiniTest::Unit::TestCase
     got_here = false
     String.stub_any_instance(:length, 42) do
       assert_equal "hello".length, 42
+      got_here = true
+    end
+    assert got_here
+  end
+
+  def test_stubs_a_method_without_passing_any_value
+    got_here = false
+    String.stub_any_instance(:length) do
+      assert_nil "hello".length
       got_here = true
     end
     assert got_here

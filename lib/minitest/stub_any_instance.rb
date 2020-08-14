@@ -1,5 +1,5 @@
 class BasicObject
-  def self.stub_any_instance name, val_or_callable, &block
+  def self.stub_any_instance name, val_or_callable = nil, &block
     new_name = "__minitest_any_instance_stub__#{name}"
 
     owns_method = instance_method(name).owner == self
