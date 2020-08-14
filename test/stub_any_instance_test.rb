@@ -67,4 +67,17 @@ class TestStubAnyInstance < MiniTest::Unit::TestCase
   def test_stubbed_method_does_not_get_restored_to_non_owning_class
     assert_equal 'bar', ::StubAnyInstanceTest::ChildClass.new.foo
   end
+
+  def test_stubbing_method_with_arguments
+    original_string = "do not change me"
+    changed_string = "i changed"
+    gsubbed = original_string.gsub(original_string, changed_string)
+    assert_equal gsubbed, changed_string
+
+    String.stub_any_instance(:gsub, original_string) do
+      gsubbed = original_string.gsub(original_string, changed_string)
+      assert_equal gsubbed, original_string
+      assert gsubbed != changed_string
+    end
+  end
 end
