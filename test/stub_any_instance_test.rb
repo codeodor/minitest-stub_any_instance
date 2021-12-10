@@ -96,4 +96,16 @@ class TestStubAnyInstance < MinitestTestClass
       assert gsubbed != changed_string
     end
   end
+
+  def test_stubbing_method_with_keyword_arguments
+    original_string = "do not change me"
+    assert_equal original_string.length, 16
+
+    use_return_arg = ->(return_arg: 0) { return_arg }
+    String.stub_any_instance(:length, use_return_arg) do
+      result = original_string.length(return_arg: :foo)
+      assert_equal result, :foo
+    end
+  end
+
 end

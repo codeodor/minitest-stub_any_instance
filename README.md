@@ -14,7 +14,7 @@ end
 
 Installation
 ------------
-Run `gem install minitest-stub_any_instance` from the command prompt
+Run `gem install minitest-stub_any_instance` from the command prompt. (Ruby 2.0+ is required.)
 
 or
 
@@ -25,4 +25,3 @@ Then `require 'minitest/stub_any_instance'` in your `minitest_helper.rb` or test
 Credits
 ---------
 Vasiliy Ermolovich ([@nashby](https://github.com/nashby/)) gets credit for [writing the code as part of a pull request](https://github.com/seattlerb/minitest/pull/245) to minitest. I extracted it into a gem.
-
