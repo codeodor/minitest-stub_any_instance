@@ -14,7 +14,7 @@ end
 
 Installation
 ------------
-Run `gem install minitest-stub_any_instance` from the command prompt. (Ruby 2.0+ is required.)
+Run `gem install minitest-stub_any_instance` from the command prompt. (Ruby 2.3+ is required.)
 
 or
 
